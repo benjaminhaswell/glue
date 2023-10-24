@@ -1,8 +1,12 @@
-# React + Vite
+# Git Commands We'll Mostly Be Using
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**git status** - check the status of the current (local) version\
+**git branch** - check what branch you are currently on\
+**git pull** - pull current version of branch from GitHub to local\
+**git checkout {branch-name}** - switch to a different branch
 
-Currently, two official plugins are available:
+**git add .** - stage all your changes for upload to GitHub\
+**git commit -m {message, surrounded by ""}** - make new commit of changes with a message\
+**git push** - upload your changes to GitHub
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+More comprehensive list of Git commands: **https://education.github.com/git-cheat-sheet-education.pdf**
