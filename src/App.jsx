@@ -2,18 +2,21 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import './components/NavBar.jsx'
+import NavBar from './components/NavBar.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+    <NavBar/>
     <h1 className='underline'>test</h1>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
+        <a href="https://vitejs.dev">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
-        <a href="https://react.dev" target="_blank">
+        <a href="https://react.dev">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
