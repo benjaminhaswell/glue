@@ -8,5 +8,6 @@
 **git add .** - stage all your changes for upload to GitHub\
 **git commit -m {message, surrounded by ""}** - make new commit of changes with a message\
 **git push** - upload your changes to GitHub
+**git stash** - Save modified and staged changes
 
 More comprehensive list of Git commands: **https://education.github.com/git-cheat-sheet-education.pdf**
