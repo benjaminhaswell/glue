@@ -46,12 +46,12 @@ function NavBar() {
 
         {/* Logo */}
         <a href="#" className="flex items-center">
-          <span className="self-center text-2xl text-green font-semibold whitespace-nowrap dark:text-white">Glue</span>
+          <span className="self-center text-2xl text-teal font-semibold whitespace-nowrap dark:text-white">Glue</span>
         </a>
 
         {/* Log in button */}
         <div className="flex md:order-2">
-          <button type="button" className="text-white bg-green hover:bg-light-green focus:ring-4 focus:outline-none focus:ring-black font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0">Log In</button>
+          <button type="button" className="text-white bg-teal hover:bg-green focus:ring-4 focus:outline-none focus:ring-black font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0">Log In</button>
         </div>
       </div>
     </nav>

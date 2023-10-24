@@ -6,8 +6,10 @@ export default {
   ],
   theme: {
     colors: {
-      'green': '#426b1f',
-      'light-green': '#5b8f2f',
+      'green': '#02B674',
+      'light-green': '#8CD348',
+      'yellow': '#FCE300',
+      'teal': '#009389',
       'black': '#000000',
       'white': '#FFFFFF'
     },
