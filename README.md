@@ -3,7 +3,7 @@
 **git status** - check the status of the current (local) version\
 **git branch** - check what branch you are currently on\
 **git pull** - pull current version of branch from GitHub to local\
-**git checkout {branch-name}** - switch to a different branch
+**git checkout {branch-name}** - switch to a different branch (or create a new one)
 
 **git add .** - stage all your changes for upload to GitHub\
 **git commit -m {message, surrounded by ""}** - make new commit of changes with a message\
