@@ -19,3 +19,9 @@
 main {
   text-align: center;
 }
+
+input[type=text] {
+  margin: 5%;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+}
