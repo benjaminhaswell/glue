@@ -1,37 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import './components/NavBar.jsx'
 import NavBar from './components/NavBar.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
     <NavBar/>
-    <h1 className='underline'>test</h1>
-      <div>
-        <a href="https://vitejs.dev">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+    {/* Background */}
+    <div className="background">
+      <h1 className='font-extrabold text-yellow md:text-5xl lg:text-6xl'>Glue</h1>
+      <h2 className='font-extrabold text-white md:text-5xl lg:text-2xl'>Your Digital App Oasis</h2>
+    </div>
+
+    <main>
+      {/* Search Bar */}
+      <h2 className='font-extrabold md:text-2xl lg:text-4xl m-12'>search bar will go here</h2>
+
+      {/* Apps Display */}
+      <h2 className='font-extrabold md:text-2xl lg:text-4xl m-12'>All Apps</h2>
+    </main>
+    
     </>
   )
 }
