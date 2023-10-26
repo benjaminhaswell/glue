@@ -25,8 +25,8 @@ function App() {
           </form>
         </div> */}
         <div className='flex items-center justify-center'>
-          <form className="w-full max-w-xl">
-            <input className="w-full" type="text" placeholder="Search Apps" aria-label="Search Apps" />
+          <form className='mt-8'>
+            <input type="text" id="searchApps" placeholder="Search Apps" aria-label="Search Apps" />
           </form>
         </div>
         
