@@ -1,8 +1,13 @@
 import './App.css'
+import AppCard from './components/AppCard'
 import './components/NavBar.jsx'
 import NavBar from './components/NavBar.jsx'
 
 function App() {
+
+  let testObject = new Object();
+  testObject.name = "Test App";
+  testObject.companyName = "Test Company Name";
 
   return (
     <>
@@ -29,11 +34,19 @@ function App() {
             <input type="text" id="searchApps" placeholder="Search Apps" aria-label="Search Apps" />
           </form>
         </div>
-        
+
 
 
         {/* Apps Display */}
         <h2 className='font-extrabold text-3xl m-12'>All Apps</h2>
+        <div className="grid grid-cols-3 gap-4 px-48">
+          <AppCard appObject={testObject}/>
+          <AppCard appObject={testObject}/>
+          <AppCard appObject={testObject}/>
+          <AppCard appObject={testObject}/>
+          <AppCard appObject={testObject}/>
+          <AppCard appObject={testObject}/>
+        </div>
       </main>
 
     </>
