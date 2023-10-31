@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import ErrorPage from './ErrorPage.jsx'
 import Login from './pages/Login.jsx'
+import NavBar from './components/NavBar.jsx'
 import './index.css'
 import {
   createBrowserRouter,
@@ -21,12 +22,13 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login/>,
-  }
+  },
 ]);
 
 // Set routes to root
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <NavBar/>
     <RouterProvider router={router} />
   </React.StrictMode>,
 )

@@ -1,7 +1,6 @@
 import './App.css'
 import AppCard from './components/AppCard'
 import './components/NavBar.jsx'
-import NavBar from './components/NavBar.jsx'
 
 function App() {
 
@@ -11,7 +10,6 @@ function App() {
 
   return (
     <>
-      <NavBar />
 
       {/* Background */}
       <div className="background">

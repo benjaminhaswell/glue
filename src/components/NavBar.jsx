@@ -45,13 +45,13 @@ function NavBar() {
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
 
           {/* Logo */}
-          <a href="#" className="flex items-center">
+          <a href="/" className="flex items-center">
             <span className="self-center text-2xl text-teal font-semibold whitespace-nowrap dark:text-white">Glue</span>
           </a>
 
           {/* Log in button */}
           <div className="flex md:order-2">
-            <button type="button" className="text-white bg-teal hover:bg-green focus:ring-4 focus:outline-none focus:ring-black font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0">Log In</button>
+            <a href="/login" tabIndex="0" className="text-white bg-teal hover:bg-green focus:ring-4 focus:outline-none focus:ring-black font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0">Log In</a>
           </div>
         </div>
       </nav>
