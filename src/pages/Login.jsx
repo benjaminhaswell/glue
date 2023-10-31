@@ -49,7 +49,7 @@ function Login() {
                         onChange={handlePasswordChange}
                     />
                     <br />
-                    <input className="bg-teal text-white border-none focus:border-black" type="submit" value="Login" />
+                    <input className="bg-teal text-white border-none focus:border-black cursor-pointer hover:bg-green" type="submit" value="Login" />
                 </form>
 
                 {/* No account? Register */}
