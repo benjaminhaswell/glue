@@ -1,9 +1,9 @@
 import './App.css'
 import AppCard from './components/AppCard'
 import './components/NavBar.jsx'
-import NavBar from './components/NavBar.jsx'
+import NavBar from '../components/NavBar.jsx'
 
-function App() {
+function Home() {
 
   let testObject = new Object();
   testObject.name = "Test App";
@@ -47,4 +47,4 @@ function App() {
   )
 }
 
-export default App
+export default Home;
