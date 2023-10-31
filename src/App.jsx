@@ -39,7 +39,8 @@ function App() {
 
         {/* Apps Display */}
         <h2 className='font-extrabold text-3xl m-12'>All Apps</h2>
-        <div className="grid grid-cols-3 gap-4 px-48">
+        {/* This element VVV is the culprit of the width issue */}
+        <div className="grid grid-cols-3 gap-4 px-8 lg:px-48">
           <AppCard appObject={testObject}/>
           <AppCard appObject={testObject}/>
           <AppCard appObject={testObject}/>

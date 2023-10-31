@@ -9,9 +9,9 @@ function AppCard({ appObject }) {
                     <img src="hollowed-boxes.png" alt="AppIcon" />
                 </div>
                 {/* App name */}
-                <h3 className="text-xl font-semibold text-gray-800 mb-2 text-center">{appObject.name}</h3>
+                <h3 className="text-xl font-semibold mb-2 text-center">{appObject.name}</h3>
                 {/* Company name */}
-                <p className="text-sm text-gray-600 text-center">{appObject.companyName}</p>
+                <p className="text-sm text-center">{appObject.companyName}</p>
             </div>
         </>
     );
