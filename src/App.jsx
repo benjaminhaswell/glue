@@ -1,17 +1,12 @@
 import './App.css'
 import AppCard from './components/AppCard'
 import './components/NavBar.jsx'
-// import getAllApps from './api/api.js';
 
 function App() {
 
   let testObject = new Object();
   testObject.name = "Test App";
   testObject.companyName = "Test Company Name";
-
-  // getAllApps().then(data => {
-  //   console.log(data); // This will log the array of data
-  // });
 
   return (
     <>
