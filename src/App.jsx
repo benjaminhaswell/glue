@@ -1,23 +1,17 @@
 import './App.css'
 import AppCard from './components/AppCard'
 import './components/NavBar.jsx'
-import {findOne} from './api/api.js';
-
-findOne('apps', 'glue', 'apps', { '_id': 1 })
-      .then(data => {
-        // Handle the response data here
-        console.log(data);
-      })
-      .catch(error => {
-        // Handle errors here
-        console.error('Error in component:', error);
-      });
+// import getAllApps from './api/api.js';
 
 function App() {
 
   let testObject = new Object();
   testObject.name = "Test App";
   testObject.companyName = "Test Company Name";
+
+  // getAllApps().then(data => {
+  //   console.log(data); // This will log the array of data
+  // });
 
   return (
     <>
