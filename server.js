@@ -3,3 +3,6 @@
 
 // Might also need:
 // https://vitejs.dev/guide/backend-integration.html
+
+// Potential useful plugin:
+// https://github.com/axe-me/vite-plugin-node
