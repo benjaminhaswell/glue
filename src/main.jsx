@@ -30,5 +30,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <NavBar/>
     <RouterProvider router={router} />
+    {/* <App/> */}
   </React.StrictMode>,
 )

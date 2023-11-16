@@ -39,7 +39,7 @@ async function getAllApps() {
 }
 
 // For debugging purposes:
-const data = await getAllApps().catch(console.dir);
-console.log(data);
+// const data = await getAllApps().catch(console.dir);
+// console.log(data);
 
-// export { getAllApps };
+export { getAllApps };
