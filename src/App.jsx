@@ -4,7 +4,9 @@ import AppCard from './components/AppCard';
 import './components/NavBar.jsx';
 
 function App() {
+  
   const [allApps, setAllApps] = useState([]);
+
 
   // Fetch apps from server
   useEffect(() => {
@@ -49,6 +51,9 @@ function App() {
                 <input type="text" id="searchApps" placeholder="Search Apps" aria-label="Search Apps" />
               </form>
             </div>
+
+            {/* Filters go here */}
+
 
             {/* Apps Display */}
             <h2 className='font-extrabold text-3xl m-12'>All Apps</h2>
