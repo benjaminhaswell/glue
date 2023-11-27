@@ -9,7 +9,7 @@ function AppCard({ appObject }) {
             <div className="bg-white rounded-lg shadow-lg p-6 mx-auto max-w-xs">
                 {/* Image */}
                 <div className="mx-auto mb-4">
-                    <img src={imagePath} alt="AppIcon" className="w-full object-cover h-72"/>
+                    <img src={imagePath} alt="AppIcon" className="w-full object-contain h-72"/>
                 </div>
                 {/* App name */}
                 <h3 className="text-xl font-semibold mb-2 text-center">{appObject.name}</h3>
