@@ -12,6 +12,7 @@ const client = new MongoClient(uri, {
 
 // Returns an array of all apps in glue apps collection
 async function getAllApps() {
+
   try {
 
     // Connect to client
