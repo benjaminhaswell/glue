@@ -9,7 +9,6 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Register from './pages/Register.jsx'
 
 // Routing tutorial: https://reactrouter.com/en/main/start/tutorial#setup
 
@@ -23,10 +22,6 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login/>,
-  },
-  {
-    path: "/register",
-    element: <Register/>,
   },
 ]);
 
