@@ -4,12 +4,12 @@ import AppCard from './components/AppCard';
 import Filters from './components/Filters.jsx';
 
 function App() {
-
   // State declaration
   const [allApps, setAllApps] = useState([]);
   const [filters, setFilters] = useState({
     payment: 'all',
     platform: 'all',
+    searchInput: '', // Add searchInput to filters state
   });
   const [displayedApps, setDisplayedApps] = useState([]);
 
@@ -39,6 +39,8 @@ function App() {
 
     // Update filters
     setFilters((prevFilters) => ({ ...prevFilters, [filterType]: value }));
+
+    console.log(filters);
 
     // Filter apps
     const filteredApps = allApps.filter((app) => {
@@ -75,13 +77,17 @@ function App() {
           
       }
 
+      if (filterType === 'searchInput') {
+
+        return JSON.stringify(app).toLowerCase().includes(filters.searchInput.toLowerCase());
+
+      }
+
       return true; // No filter applied
     });
 
     setDisplayedApps(filteredApps);
   };
-
-
 
   // Body
   return (
@@ -95,7 +101,14 @@ function App() {
       {/* Search Apps */}
       <div className='flex items-center justify-center'>
         <form className='mt-8'>
-          <input type="text" id="searchApps" placeholder="Search Apps" aria-label="Search Apps" />
+          <input
+            type="text"
+            id="searchApps"
+            placeholder="Search Apps"
+            aria-label="Search Apps"
+            value={filters.searchInput}
+            onChange={(e) => handleFilterChange('searchInput', e.target.value)}
+          />
         </form>
       </div>
 
@@ -109,7 +122,6 @@ function App() {
           <p>Loading...</p>
         ) : (
           <>
-
             {/* Apps */}
             <h2 className='font-extrabold text-3xl m-12'>All Apps</h2>
             <div className="grid grid-cols-3 gap-4 px-8 lg:px-48">
