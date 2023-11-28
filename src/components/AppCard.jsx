@@ -1,4 +1,4 @@
-import React from 'react';
+
 import PropTypes from 'prop-types';
 
 function AppCard({ appObject }) {
@@ -97,9 +97,9 @@ function AppCard({ appObject }) {
 
     const imagePath = "app_images/" + appObject.imageName;
     return (
-        <div>
+        <>
             {/* Card Content */}
-            <div className="bg-white rounded-lg shadow-lg p-6 mx-auto max-w-xs">
+            <div className="bg-white rounded-lg shadow-lg p-6 mx-auto max-w-xs hover:shadow-2xl hover:cursor-pointer transition duration-300 ease-in-out" onClick={openPopupWindow}>
                 {/* Image */}
                 <div className="mx-auto mb-4">
                     <img src={imagePath} alt="AppIcon" className="w-full object-contain h-72" />
@@ -109,12 +109,7 @@ function AppCard({ appObject }) {
                 {/* Company name */}
                 <p className="text-sm text-center">{appObject.organization}</p>
             </div>
-
-            {/* Trigger to open the smaller popup window */}
-            <div className="popup-trigger" onClick={openPopupWindow}>
-                Click to view details
-            </div>
-        </div>
+        </>
     );
 }
 
