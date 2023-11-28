@@ -4,13 +4,13 @@ import AppCard from './components/AppCard';
 import Filters from './components/Filters.jsx';
 
 function App() {
-
   // State declaration
   const [allApps, setAllApps] = useState([]);
   const [filters, setFilters] = useState({
     payment: 'all',
     platform: 'all',
   });
+  const [searchText, setSearchText] = useState('');
   const [displayedApps, setDisplayedApps] = useState([]);
 
   useEffect(() => {
@@ -34,46 +34,43 @@ function App() {
     fetchApps();
   }, []);
 
-  // Every time a filter is changed
-  const handleFilterChange = (filterType, value) => {
-
-    // Update filters
-    setFilters((prevFilters) => ({ ...prevFilters, [filterType]: value }));
-
-    // Filter apps
+  // Apply filters (payment, platform, and search)
+  useEffect(() => {
     const filteredApps = allApps.filter((app) => {
-
       // Filtering by payment
-      if (filterType === 'payment') {
-
-        if (value === 'all') {
-          return true; // Show all apps
-        } else if (value === 'free') {
-          return app.price === "0";
-        } else {
-          return app.price !== "0";
-        }
-        
-      }
+      const paymentFilter =
+        filters.payment === 'all' ||
+        (filters.payment === 'free' && app.price === '0') ||
+        (filters.payment === 'paid' && app.price !== '0');
 
       // Filtering by platform
-      if (filterType === 'platform') {
+      const platformFilter =
+        filters.platform === 'all' ||
+        (app.platform && app.platform.length === 1 && app.platform.includes(filters.platform)) ||
+        (app.Platform && app.Platform.length === 1 && app.Platform.includes(filters.platform));
 
-        if (value === 'all') return true;
+      // Filtering by search text
+      const searchFilter =
+        searchText === '' ||
+        JSON.stringify(app).toLowerCase().includes(searchText);
 
-        console.log("Name: " + app.name + " | Platform: " + app.platform);
-
-        // Filter by platform (iOS, Android, all)
-        return app.platform.includes(value);
-      }
-
-      return true; // No filter applied
+      // Combine all filters using logical AND
+      return paymentFilter && platformFilter && searchFilter;
     });
 
     setDisplayedApps(filteredApps);
+  }, [filters, searchText, allApps]);
+
+  // Every time a filter is changed
+  const handleFilterChange = (filterType, value) => {
+    // Update filters
+    setFilters((prevFilters) => ({ ...prevFilters, [filterType]: value }));
   };
 
-
+  // When user types in the search input
+  const handleSearchChange = (event) => {
+    setSearchText(event.target.value.toLowerCase());
+  };
 
   // Body
   return (
@@ -87,7 +84,13 @@ function App() {
       {/* Search Apps */}
       <div className='flex items-center justify-center'>
         <form className='mt-8'>
-          <input type="text" id="searchApps" placeholder="Search Apps" aria-label="Search Apps" />
+          <input
+            type="text"
+            id="searchApps"
+            placeholder="Search Apps"
+            aria-label="Search Apps"
+            onChange={handleSearchChange}
+          />
         </form>
       </div>
 
@@ -97,11 +100,10 @@ function App() {
       </div>
 
       <main>
-        {displayedApps.length === 0 ? (
+        {allApps.length === 0 ? (
           <p>Loading...</p>
         ) : (
           <>
-
             {/* Apps */}
             <h2 className='font-extrabold text-3xl m-12'>All Apps</h2>
             <div className="grid grid-cols-3 gap-4 px-8 lg:px-48">
@@ -109,6 +111,9 @@ function App() {
                 <AppCard key={index} appObject={appObject} />
               ))}
             </div>
+            {displayedApps.length === 0 ? (
+              <h1>No apps match your query.</h1>
+            ) : ( <></> )};
           </>
         )}
       </main>

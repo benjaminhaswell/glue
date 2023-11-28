@@ -4,12 +4,12 @@ import App from './App.jsx'
 import ErrorPage from './ErrorPage.jsx'
 import Login from './pages/Login.jsx'
 import NavBar from './components/NavBar.jsx'
+import Register from './pages/Register.jsx'
 import './index.css'
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Register from './pages/Register.jsx'
 
 // Routing tutorial: https://reactrouter.com/en/main/start/tutorial#setup
 
