@@ -62,13 +62,15 @@ function App() {
         if (value === 'all') return true;
 
         // console.log("Name: " + app.name + " | Platform: " + app.platform);
-        console.log(JSON.stringify(app))
+        // console.log(JSON.stringify(app))
 
         // Filter by platform (iOS, Android, all)
         if (app.platform) {
-          app.platform.includes(value)
+          if (app.platform.length > 1) return false;
+          return app.platform.includes(value)
         } else if (app.Platform) {
-          app.Platform.includes(value)
+          if (app.Platform.length > 1) return false;
+          return app.Platform.includes(value)
         }
           
       }
