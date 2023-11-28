@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import './Login.css';
+import { Link } from 'react-router-dom';
 import Register from './Register.jsx';
 
 
@@ -81,11 +82,7 @@ function Login() {
 
                 {/* No account? Register */}
                 <span className='m-6'>Don&apos;t have an account?  
-{/* <<<<<<< HEAD */}
                     <Link to="/register" replace> Register Here.</Link>
-{/* ======= */}
-                    <a href="/register" className='text-teal'> Register Here.</a>
-{/* >>>>>>> 69dd66c33b5a6db2c56349bc5bb5a8e1d44c1385 */}
                 </span>
             </div>
         </>
