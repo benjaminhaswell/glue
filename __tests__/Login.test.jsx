@@ -5,12 +5,10 @@ import { MemoryRouter } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 
 describe('Login Component', () => {
-    // Add this mock before tests run 
     beforeAll(() => {
         jest.spyOn(console, 'log').mockImplementation(() => {}); 
     });
   
-    // Add this after tests to restore original implementation
     afterAll(() => {
         console.log.mockRestore();
     });
