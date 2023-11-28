@@ -100,7 +100,7 @@ function App() {
       </div>
 
       <main>
-        {displayedApps.length === 0 ? (
+        {allApps.length === 0 ? (
           <p>Loading...</p>
         ) : (
           <>
@@ -111,6 +111,9 @@ function App() {
                 <AppCard key={index} appObject={appObject} />
               ))}
             </div>
+            {displayedApps.length === 0 ? (
+              <h1>No apps match your query.</h1>
+            ) : ( <></> )};
           </>
         )}
       </main>
