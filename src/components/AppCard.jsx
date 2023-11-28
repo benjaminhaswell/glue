@@ -3,8 +3,20 @@ import PropTypes from 'prop-types';
 
 function AppCard({ appObject }) {
     const openPopupWindow = () => {
-        const popupFeatures = 'width=400,height=300,scrollbars=yes,resizable=yes';
-        const popupWindow = window.open('', '_blank', popupFeatures);
+
+    // Get screen width and height
+    const screenWidth = window.screen.width;
+    const screenHeight = window.screen.height;
+
+    // Calculate the dimensions for the popup window
+    const popupWidth = Math.min(1920, screenWidth * 0.8);
+    const popupHeight = Math.min(1080, screenHeight * 0.8);
+
+    // Construct the popup features string with calculated dimensions
+    const popupFeatures = `width=${popupWidth},height=${popupHeight},scrollbars=yes,resizable=yes`;
+    
+    // Open the popup window
+    const popupWindow = window.open('', '_blank', popupFeatures);
 
         // Customize the content inside the new popup window
         const popupContent = `
