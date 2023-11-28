@@ -18,11 +18,35 @@ function Login() {
         setPassword(event.target.value);
     }
 
+    const [formErrors, setFormErrors] = useState({});
+
+    // Validation function to check if username and password are not empty
+    function validateForm() {
+        const errors = {};
+
+        if (!username.trim()) {
+            errors.username = 'Username is required';
+        }
+
+        if (!password.trim()) {
+            errors.password = 'Password is required';
+        }
+
+        setFormErrors(errors);
+        return Object.keys(errors).length === 0;
+    }
+
+
     // Handle submit (validation)
     function handleSubmit(event) {
         event.preventDefault();
-        console.log('Username:', username);
-        console.log('Password:', password);
+        const isValid = validateForm();
+        if (isValid) {
+            console.log('Username:', username);
+            console.log('Password:', password);
+        } else {
+            console.log('Form has errors. Please fill in all required fields.');
+        }
     }
 
     return (
