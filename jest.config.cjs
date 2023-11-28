@@ -6,4 +6,5 @@ module.exports = {
     '\\.(css|less|sass|scss)$': '<rootDir>/__mocks__/styleMock.cjs', // Update the file extension accordingly
   },
   testEnvironment: 'jsdom',
+  setupFilesAfterEnv: ["<rootDir>/setupTests.js"],
 };
