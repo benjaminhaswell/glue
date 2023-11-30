@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { getAllApps } from './src/api/api.js';
+import { getAllApps, verifyLogin } from './src/api/api.js';
 
 const app = express();
 const port = 3000; // Use the port your app is running on
@@ -28,6 +28,26 @@ app.get('/api/apps', async (req, res) => {
     }
 
 });
+
+app.post('/login', async (req, res) => {
+    try {
+
+        const { username, password } = req.body;
+
+        const validLogin = await verifyLogin(username, password);
+
+        if (validLogin) {
+            res.json({ message: 'Login successful' }); // You can send a meaningful response back
+        } else {
+            res.json({ message: 'Login unsuccesssful' }); // You can send a meaningful response back
+        }
+        
+    } catch (error) {
+        console.error('Error during login verification:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
 
 // Start the Express server
 app.listen(port, () => {

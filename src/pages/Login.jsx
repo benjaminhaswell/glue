@@ -18,9 +18,33 @@ function Login() {
     // Handle submit (validation)
     function handleSubmit(event) {
         event.preventDefault();
-        console.log('Username:', username);
-        console.log('Password:', password);
+
+        // Create an object with username and password
+        const credentials = { username, password };
+
+        // Make a POST request to the server
+        fetch('http://localhost:3000/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(credentials),
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Server response:', data);
+                
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
     }
+
 
     return (
         <>
@@ -53,7 +77,7 @@ function Login() {
                 </form>
 
                 {/* No account? Register */}
-                <span className='m-6'>Don&apos;t have an account?  
+                <span className='m-6'>Don&apos;t have an account?
                     <a href="/register" className='text-teal'> Register Here.</a>
                 </span>
             </div>

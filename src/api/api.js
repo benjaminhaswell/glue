@@ -39,8 +39,34 @@ async function getAllApps() {
   }
 }
 
+async function verifyLogin(username, password) {
+  try {
+
+      // Connect to client
+      await client.connect();
+
+      // Connect to database collection
+      const database = client.db('glue');
+      const collection = database.collection('users');
+
+      // Find a user with the provided username and password
+      const user = await collection.findOne({ username, password });
+
+      console.log("User: {" + user + "}");
+
+      // If a user is found, return true; otherwise, return false
+      return !!user;
+  } catch (error) {
+      console.error('Error in verifyLogin:', error.message);
+      throw error; // Re-throw the error for higher-level error handling
+  } finally {
+      await client.close();
+  }
+}
+
+
 // For debugging purposes:
 // const data = await getAllApps().catch(console.dir);
 // console.log(data);
 
-export { getAllApps };
+export { getAllApps, verifyLogin };
