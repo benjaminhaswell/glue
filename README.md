@@ -1,13 +1,16 @@
-# Git Commands We'll Mostly Be Using
+# How To Run:
+- Clone the app into your local repository using **git clone (link)**
+- Once installed, open the glue folder in a terminal and run **npm install**. This will install all of the dependencies and packages needed to run our app.
+- Once packages are installed, run **npm run dev** and click the link to our app.
 
-**git status** - check the status of the current (local) version\
-**git branch** - check what branch you are currently on\
-**git pull** - pull current version of branch from GitHub to local\
-**git checkout {branch-name}** - switch to a different branch (or create a new one)
+# Testing:
+If you would like to run our test scripts, open a terminal and run **npm test**. This will run all of the tests in the __tests__ folder.
 
-**git add .** - stage all your changes for upload to GitHub\
-**git commit -m {message, surrounded by ""}** - make new commit of changes with a message\
-**git push** - upload your changes to GitHub
-**git stash** - Save modified and staged changes
-
-More comprehensive list of Git commands: **https://education.github.com/git-cheat-sheet-education.pdf**
+# Features:
+- Scroll to view all of our apps submitted.
+- Search for apps.
+- Filter based on price or platform.
+- Log in or create an account.
+- View full app descriptions.
+- Submit app requests.
+ 
