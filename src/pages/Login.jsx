@@ -1,8 +1,6 @@
-import React from 'react';
 import { useState } from 'react';
 import './Login.css';
 import { Link } from 'react-router-dom';
-import Register from './Register.jsx';
 
 
 function Login() {
@@ -17,24 +15,6 @@ function Login() {
     }
     function handlePasswordChange(event) {
         setPassword(event.target.value);
-    }
-
-    const [formErrors, setFormErrors] = useState({});
-
-    // Validation function to check if username and password are not empty
-    function validateForm() {
-        const errors = {};
-
-        if (!username.trim()) {
-            errors.username = 'Username is required';
-        }
-
-        if (!password.trim()) {
-            errors.password = 'Password is required';
-        }
-
-        setFormErrors(errors);
-        return Object.keys(errors).length === 0;
     }
 
 
