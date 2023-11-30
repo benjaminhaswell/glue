@@ -49,10 +49,16 @@ function NavBar() {
             <span className="self-center text-2xl text-teal font-semibold whitespace-nowrap dark:text-white">Glue</span>
           </a>
 
+          {/* Request App button */}
+          <div className="flex md:order-2">
+            <a href="/requestApp" tabIndex="0" className="text-white bg-teal hover:bg-green focus:ring-4 focus:outline-none focus:ring-black font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0">Request App</a>
+          </div>
+
           {/* Log in button */}
           <div className="flex md:order-2">
             <a href="/login" tabIndex="0" className="text-white bg-teal hover:bg-green focus:ring-4 focus:outline-none focus:ring-black font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0">Log In</a>
           </div>
+
         </div>
       </nav>
     </>
