@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import './Register.css';
 
@@ -30,8 +31,11 @@ function Register() {
     // Handle submit (validation)
     function handleSubmit(event) {
         event.preventDefault();
+        console.log('First Name:', firstName);
+        console.log('Last Name:', lastName);
         console.log('Username:', username);
         console.log('Password:', password);
+        console.log('Verified Password:', verPassword);
     }
 
     return (
@@ -91,7 +95,7 @@ function Register() {
                         onChange={handleVerPasswordChange}
                     />
                     <br />
-                    <input className="bg-teal text-white border-none focus:border-black cursor-pointer hover:bg-green" type="submit" value="Create" />
+                    <input className="bg-teal text-white border-none focus:border-black cursor-pointer hover:bg-green" type="submit" value="Create"/>
                 </form>
             </div>
         </>
