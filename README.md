@@ -1,13 +1,9 @@
-# Git Commands We'll Mostly Be Using
+# How to Install
+- Download the program or clone the git repository
+- Open a terminal in the glue folder
+- Run **npm install** to install all of the packages and dependencies needed to run the app
+- Run **npm run dev** and open the link provided in the terminal
 
-**git status** - check the status of the current (local) version\
-**git branch** - check what branch you are currently on\
-**git pull** - pull current version of branch from GitHub to local\
-**git checkout {branch-name}** - switch to a different branch (or create a new one)
+# Testing
+- If you would like to run our test scripts, run **npm test** and our test scripts will be run
 
-**git add .** - stage all your changes for upload to GitHub\
-**git commit -m {message, surrounded by ""}** - make new commit of changes with a message\
-**git push** - upload your changes to GitHub
-**git stash** - Save modified and staged changes
-
-More comprehensive list of Git commands: **https://education.github.com/git-cheat-sheet-education.pdf**
