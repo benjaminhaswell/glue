@@ -39,28 +39,66 @@ async function getAllApps() {
   }
 }
 
+// Verify credentials
 async function verifyLogin(username, password) {
   try {
 
-      // Connect to client
-      await client.connect();
+    // Connect to client
+    await client.connect();
 
-      // Connect to database collection
-      const database = client.db('glue');
-      const collection = database.collection('users');
+    // Connect to database collection
+    const database = client.db('glue');
+    const collection = database.collection('users');
 
-      // Find a user with the provided username and password
-      const user = await collection.findOne({ username, password });
+    // Find a user with the provided username and password
+    const user = await collection.findOne({ username, password });
 
-      console.log("User: {" + user + "}");
-
-      // If a user is found, return true; otherwise, return false
-      return !!user;
+    // If a user is found, return true; otherwise, return false
+    return !!user;
   } catch (error) {
-      console.error('Error in verifyLogin:', error.message);
-      throw error; // Re-throw the error for higher-level error handling
+    console.error('Error in verifyLogin:', error.message);
+    throw error; // Re-throw the error for higher-level error handling
   } finally {
-      await client.close();
+    await client.close();
+  }
+}
+
+// Register account in database
+async function registerAccount(username, password) {
+  try {
+
+    // Connect to client
+    await client.connect();
+
+    // Connect to database collection
+    const database = client.db('glue');
+    const collection = database.collection('users');
+
+    const user = {
+      username: username,
+      password: password,
+      moderator: false,
+      admin: false
+    }
+
+    // Make sure user doesn't already exist
+    const exists = await collection.findOne({ username });
+    if (exists) {
+      return false;
+    }
+
+    // Find a user with the provided username and password
+    const result = await collection.insertOne(user);
+
+    console.log("User successfully inserted with id: " + result.insertedId);
+
+    return true;
+
+  } catch (error) {
+    console.error('Error in verifyLogin:', error.message);
+    throw error; // Re-throw the error for higher-level error handling
+  } finally {
+    await client.close();
   }
 }
 
@@ -69,4 +107,4 @@ async function verifyLogin(username, password) {
 // const data = await getAllApps().catch(console.dir);
 // console.log(data);
 
-export { getAllApps, verifyLogin };
+export { getAllApps, verifyLogin, registerAccount };

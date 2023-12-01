@@ -8,6 +8,7 @@ function Login() {
     // Use state for username and password
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [loginSuccess, setLoginSuccess] = useState(true);
 
     // Update username and password upon change
     function handleUsernameChange(event) {
@@ -39,12 +40,20 @@ function Login() {
                 }
                 return response.json();
             })
+
+            // Handle login
             .then(data => {
                 console.log('Server response:', data);
+
+                if (data.message === 'Login unsuccessful') {
+                    setLoginSuccess(false);
+                } else {
+                    setLoginSuccess(true);
+                }
                 
             })
             .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
+                console.error('Error:', error);
             });
     }
 
@@ -53,6 +62,9 @@ function Login() {
         <>
             <div className="flex items-center justify-center flex-col mt-48">
                 <h1 className='text-teal text-2xl font-semibold'>Login</h1>
+
+                {/* Login error message */}
+                {!loginSuccess && <h2 className='text-red'>Invalid credentials. Please try again.</h2>}
 
                 {/* Login form */}
                 <form className='mt-8 flex flex-col' onSubmit={handleSubmit}>

@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { getAllApps, verifyLogin } from './src/api/api.js';
+import { getAllApps, verifyLogin, registerAccount } from './src/api/api.js';
 
 const app = express();
 const port = 3000; // Use the port your app is running on
@@ -37,13 +37,32 @@ app.post('/login', async (req, res) => {
         const validLogin = await verifyLogin(username, password);
 
         if (validLogin) {
-            res.json({ message: 'Login successful' }); // You can send a meaningful response back
+            res.json({ message: 'Login successful' });
         } else {
-            res.json({ message: 'Login unsuccesssful' }); // You can send a meaningful response back
+            res.json({ message: 'Login unsuccessful' });
         }
         
     } catch (error) {
         console.error('Error during login verification:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+});
+
+app.post('/register', async (req, res) => {
+    try {
+
+        const { username, password } = req.body;
+
+        const success = await registerAccount(username, password);
+
+        if (success) {
+            res.json({ message: 'Registration successful' });
+        } else {
+            res.json({ message: 'Registration unsuccessful' });
+        }
+        
+    } catch (error) {
+        console.error('Error during registration:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 });

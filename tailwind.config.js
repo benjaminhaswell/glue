@@ -11,7 +11,8 @@ export default {
       'yellow': '#FCE300',
       'teal': '#009389',
       'black': '#000000',
-      'white': '#FFFFFF'
+      'white': '#FFFFFF',
+      'red' : 'red',
     },
     extend: {},
   },
